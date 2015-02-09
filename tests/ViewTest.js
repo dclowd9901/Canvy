@@ -1,0 +1,1 @@
+var View = require('../../source/view');
