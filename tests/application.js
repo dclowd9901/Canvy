@@ -23,4 +23,6 @@ app.addSubview(masterView);
 var appDebugger = new Debug(app);
 app.afterLoop = function() {
   appDebugger.out('fps: ' + Math.round(1000/app.deltaTime));
-}
+};
+
+masterView.layer.addSublayer(new Layer({}));

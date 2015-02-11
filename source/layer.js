@@ -11,6 +11,12 @@ module.exports = Base.extend({
   zPosition: 0,
   sublayers: [],
   drawable: null,
+  constraintRules: {
+     widthSet: /(\w+)\([<=>\d]+\)/g,
+     widthSize: /([<>=])=(\d+)/g,
+     object: /\[(\w+)(?:\(.*\))*\]|\|/g,
+     spacing: /(\||\[(\w+)[\(\)><=\d]*\])([-\d]*)(\||\[(\w+)[\(\)><=\d]*\])/g
+  },
 
   init: function(frame) {
     this.frame = frame;
@@ -40,5 +46,44 @@ module.exports = Base.extend({
 
   readyForRedraw: function() {
     this._readyForRedraw = true;
+  },
+
+  _parseConstraint: function(constraint) {
+    var parsedConstraint = this._parseWidths(constraint);
+
+  },
+
+  _parseWidths: function(vfl) {
+    var matches = this.constraintRules.widthSet.match(vfl),
+        parsedConstraint = {
+          objects: {
+            first: null
+          },
+          instruction: null,
+          value: null,
+          direction: null
+        };
+
+    _.each(matches, _.bind(function(match) {
+      var result = this.constraintRules.widthSize.exec(match);
+
+      switch (result[1]) {
+        case '<':
+          this.maxWidth = result[2];
+        case '>':
+          this.minWidth = result[2];
+        case '=':
+          this.width = result[2];
+      }
+    }, this));
+  },
+
+  _parseSpacing: function(vfl) {
+    var matches = [];
+
+    while(match = this.constraintRules.spacing.exec(vfl)) {
+      matches.push(match);
+      regex.lastIndex = match.index + 1;
+    }
   }
 });

@@ -1,0 +1,134 @@
+Standard Space
+[button]-[textField]
+
+{
+  objects: {
+    first: 'button',
+    second: 'textField'
+  },
+  instruction: 'spacing',
+  value: 8,
+  direction: 'horizontal'
+}
+
+Width Constraint
+[button(>=50)]
+
+{
+  objects: {
+    first: 'button'
+  },
+  instruction: 'maxWidth',
+  value: 50,
+  direction: 'horizontal'
+}
+
+Connection to Superview
+|-50-[purpleBox]-50-|
+
+{
+  objects: {
+    first: 'parent',
+    second: 'purpleBox'
+  },
+  instruction: 'spacing',
+  value: 50,
+  direction: 'horizontal',
+  priority: 100
+}
+
+{
+  objects: {
+    first: 'purpleBox',
+    second: 'parent' 
+  },
+  instruction: 'spacing',
+  value: 50,
+  direction: 'horizontal',
+  priority: 100
+}
+
+Vertical Layout
+V:[topField]-10-[bottomField]
+
+{
+  objects: {
+    first: 'topField',
+    second: ['bottomField']
+  },
+  instruction: 'spacing',
+  value: 10,
+  direction: 'vertical',
+  priority: 100  
+}
+
+Flush Views
+[maroonView][blueView]
+
+{
+  objects: {
+    first: 'maroonView',
+    second: 'blueView'
+  },
+  instruction: 'spacing',
+  value: 0,
+  direction: 'horizontal',
+  priority: 100  
+}
+
+Priority
+[button(100@20)]
+
+{
+  objects: {
+    first: 'button'
+  },
+  instruction: 'width',
+  value: 100,
+  direction: 'horizontal',
+  priority: 20
+}
+
+Equal Widths
+[button1(==button2)]
+
+{
+  objects: {
+     first: 'button1',
+     second: 'button2'
+  },
+  instruction: 'width'
+  value: null,
+  direction: 'horizontal',
+  priority: 100
+}
+
+Multiple Predicates
+[flexibleButton(>=70,<=100)]
+
+{
+  objects: {
+    first: 'flexibleButton'
+  },
+  instruction: 'minWidth',
+  value: 70,
+  direction: 'horizontal',
+  priority: 100
+}
+
+{
+  objects: {
+    first: 'flexibleButton'
+  },
+  instruction: 'maxWidth',
+  value: 100,
+  direction: 'horizontal',
+  priority: 100
+}
+
+A Complete Line of Layout
+|-[find]-[findNext]-[findField(>=20)]-|
+
+|-[find]
+
+H:|
