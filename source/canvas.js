@@ -1,5 +1,5 @@
-var Base = require('./base.js');
-var $     = require('jquery');
+var Base = require('./base.js'),
+    $    = require('jquery');
 
 /**
  * UICanvasView/canvas.js

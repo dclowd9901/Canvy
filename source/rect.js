@@ -1,4 +1,4 @@
-Drawable = require('./drawable.js');
+var Drawable = require('./drawable.js');
 
 module.exports = Drawable.extend({
   width: 0,

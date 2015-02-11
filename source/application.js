@@ -1,5 +1,5 @@
-View = require('./view.js');
-_ = require('lodash');
+var View = require('./view.js'),
+    _    = require('lodash');
 
 module.exports = View.extend({
   _currentPresentationView: null,

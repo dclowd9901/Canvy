@@ -1,6 +1,6 @@
-TextView = require('./view.js');
-Text = require('./text.js');
-Layer = require('./layer.js');
+var TextView = require('./view.js'),
+    Text     = require('./text.js'),
+    Layer    = require('./layer.js');
 
 module.exports = View.extend({  
   content: '',

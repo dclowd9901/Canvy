@@ -1,5 +1,5 @@
-var Base = require('./base.js');
-var Layer = require('./layer.js');
+var Base  = require('./base.js'),
+    Layer = require('./layer.js');
 
 module.exports = Base.extend({
   layer: null,

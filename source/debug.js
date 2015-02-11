@@ -1,5 +1,5 @@
-Base = require('./base.js');
-TextView = require('./text_view.js');
+var Base     = require('./base.js'),
+    TextView = require('./text_view.js');
 
 module.exports = Base.extend({
   debugOutput: null,

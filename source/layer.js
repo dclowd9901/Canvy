@@ -1,6 +1,6 @@
-var Base = require('./base.js');
-var _     = require('lodash');
-var Rect = require('./rect.js');
+var Base = require('./base.js'),
+    _    = require('lodash'),
+    Rect = require('./rect.js');
 
 module.exports = Base.extend({
   frame: null,
