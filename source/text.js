@@ -1,4 +1,5 @@
-var Drawable = require('./drawable.js');
+var Drawable = require('./drawable.js'),
+    _        = require('lodash');
 
 module.exports = Drawable.extend({
   content: '',

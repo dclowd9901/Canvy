@@ -1,6 +1,7 @@
 var TextView = require('./view.js'),
     Text     = require('./text.js'),
-    Layer    = require('./layer.js');
+    Layer    = require('./layer.js'),
+    _        = require('lodash');
 
 module.exports = View.extend({  
   content: '',

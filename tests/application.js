@@ -3,6 +3,7 @@ View = require('../source/view.js');
 Canvas = require('../source/canvas.js');
 Debug =  require('../source/debug.js');
 $ = require('jquery');
+Layer = require('../source/layer.js');
 
 var app = new Application(new Canvas($('#mainCanvas')));
 

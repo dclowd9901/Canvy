@@ -1,6 +1,7 @@
-var Base = require('./base.js'),
-    _    = require('lodash'),
-    Rect = require('./rect.js');
+var Base     = require('./base.js'),
+    _        = require('lodash'),
+    Rect     = require('./rect.js'),
+    Drawable = require('./drawable.js');
 
 module.exports = Base.extend({
   frame: null,
@@ -9,7 +10,7 @@ module.exports = Base.extend({
   transform: null,
   backgroundColor: null,
   zPosition: 0,
-  sublayers: [],
+  sublayers: null,
   drawable: null,
   constraintRules: {
      widthSet: /(\w+)\([<=>\d]+\)/g,
@@ -21,6 +22,7 @@ module.exports = Base.extend({
   init: function(frame) {
     this.frame = frame;
     this.drawable = new Drawable(frame);
+    this.sublayers = [];
   },
 
   draw: function(canvas) {
